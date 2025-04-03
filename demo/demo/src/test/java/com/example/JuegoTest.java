@@ -10,8 +10,8 @@ public class JuegoTest {
     private static Juego juego;
     
     @BeforeAll
-    public void initializer () {
-        this.juego = new Juego();
+    public static void initializer() { // Corrected: Made the method static
+        juego = new Juego();
     }
 
     // Empates \\
@@ -26,7 +26,6 @@ public class JuegoTest {
         String resultado = juego.ganador("PAPEL", "PAPEL");
         assertEquals("EMPATE", resultado);
     }
-
 
     @Test
     public void testGanadorEmpateTijera() {
@@ -73,7 +72,6 @@ public class JuegoTest {
         String resultado = juego.ganador("PAPEL", "PIEDRA");
         assertEquals("Gana el jugador 1", resultado); 
     }
-
 
     // FALLO \\
     
